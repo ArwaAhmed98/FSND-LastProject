@@ -23,6 +23,7 @@ def create_app(test_config=None):
         response.headers.add('Acess-Control-Allow-Methods',
                              'GET,POST,PATCH,DELETE,OPTIONS')
         return response
+    
     @app.route('/')
     def index():
         return ("Congrats")
