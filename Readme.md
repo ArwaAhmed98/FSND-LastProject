@@ -140,7 +140,7 @@ or using Postman send the following request :
 
 ```{'Actors':[{'age': 20,'gender': 'Female','id': 1,'name': 'Nada',},{'age': 22,'gender': 'female','id': 2,'name': 'arwa',},{'age': 10,'gender': 'female','id': 3,'name': 'mai',}],'success': true}```
 
- [Get:actors] (http://example.com/)
+ [Get:movies](http://example.com/)
 
 ```curl  --request GET 'http://127.0.0.1:5000/movies' \--header 'Authorization: Bearer $TOKEN_VALUE```
 
