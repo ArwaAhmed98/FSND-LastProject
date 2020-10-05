@@ -121,9 +121,92 @@ Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` d
       - Sign into each account and make note of the JWT .
     
 ## Testing the API with cURL or Postman
-In order to test your API , we have 2 ways Either to use cURL or [Postman](https://getpostman.com) collection  . You have to save $TOKEN_VALUE and replace it with its value in the URL of the curl or postman .
+In order to test your API , we have 2 ways Either to use cURL or [Postman](https://getpostman.com) collection  . You have to save $TOKEN_VALUE and replace it with its value in the URL of the curl or postman . you have to choose the way that is more convenient to you . If you chose to use Postman . So , you must send the token in the Authorization tab .
 
-## Testing with unit testing
+## Test using unit testing 
+unit testing is already implmented in the ```test_app.py``` with Test driven development concept . in order to test the APP with its Authorization run the following command . 
+## Samples of Postman and cURL
+* Get:actors
+```curl --location --request GET 'http://127.0.0.1:5000/actors' \
+--header 'Authorization: Bearer $TOKEN_VALUE```
+or using Postman send the following request :
+```http://127.0.0.1:5000/actors``` .
+
+Response
+
+```{
+    "Actors": [
+        {
+            "age": 20,
+            "gender": "Female",
+            "id": 1,
+            "name": "Nada"
+        },
+        {
+            "age": 22,
+            "gender": "female",
+            "id": 2,
+            "name": "arwa"
+        },
+        {
+            "age": 10,
+            "gender": "female",
+            "id": 3,
+            "name": "mai"
+        }
+    ],
+    "success": true
+} ```
+* Get:actors
+```curl  --request GET 'http://127.0.0.1:5000/movies' \
+--header 'Authorization: Bearer $TOKEN_VALUE```
+or using Postman send the following request :
+```http://127.0.0.1:5000/movies``` . You will get the response :
+
+```{
+    "Movies": [
+        {
+            "actor_id": 1,
+            "id": 2,
+            "release_date": "Thu, 07 May 1998 00:00:00 GMT",
+            "title": "aihaga"
+        },
+        {
+            "actor_id": 1,
+            "id": 3,
+            "release_date": "Sat, 02 Feb 2222 00:00:00 GMT",
+            "title": "toystory"
+        },
+        {
+            "actor_id": 2,
+            "id": 4,
+            "release_date": "Tue, 03 Mar 3333 00:00:00 GMT",
+            "title": "juglebook"
+        },
+        {
+            "actor_id": 3,
+            "id": 5,
+            "release_date": "Mon, 04 Apr 4444 00:00:00 GMT",
+            "title": "google"
+        }
+    ],
+    "success": true
+} ```
+
+* DELETE:movies
+``` curl  --request DELETE 'http://127.0.0.1:5000/movies/2' \
+--header 'Authorization: Bearer $TOKEN_VALUE' ```
+
+or send the following request using postman :
+``` http://127.0.0.1:5000/movies/2 ```
+you will get the response with the id that has been deleted . 
+```
+{
+    "id": 2,
+    "success": true
+}
+```
+```
 ```
 cd into your project directory
 bash setup2.sh
