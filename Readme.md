@@ -127,9 +127,12 @@ In order to test your API , we have 2 ways Either to use cURL or [Postman](https
 unit testing is already implmented in the ```test_app.py``` with Test driven development concept . in order to test the APP with its Authorization run the following command . 
 ## Samples of Postman and cURL
 
-* Get:actors
+[Get:actors]
+
 ``` curl --location --request GET 'http://127.0.0.1:5000/actors' \ --header 'Authorization: Bearer $TOKEN_VALUE```
+
 or using Postman send the following request :
+
 ```http://127.0.0.1:5000/actors``` .
 
 Response
@@ -148,13 +151,16 @@ or using Postman send the following request :
 ```curl  --request DELETE 'http://127.0.0.1:5000/actors/1' \ --header 'Authorization: Bearer $TOKEN_VALUE' ```
 
 or send the following request using postman :
+
 ```http://127.0.0.1:5000/actors/1 ```
+
 you will get the response with the id that has been deleted .
 
 ```{"actor_id": 1,"success": true}```
 
 
 * DELETE:movies
+
 ```curl  --request DELETE 'http://127.0.0.1:5000/movies/2' \ --header 'Authorization: Bearer $TOKEN_VALUE' ```
 
 or send the following request using postman :
@@ -164,29 +170,40 @@ you will get the response with the id that has been deleted .
 ```{"id": 2,"success": true}```
 
 * POST:actors
+
 ``` curl --location --request POST 'http://127.0.0.1:5000/actors' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \ --data-raw '{"name" : "arwa","age" : 80,"gender":"female"}' ```
+
 ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
 and Put the following body here and then send .
 ```{"name" : "arwa","age" : 80,"gender":"female"}```
+
 you will get the following request . New ID of the NEW inserted RAW 
 
 ```{"id": 4,"success": true}```
 
 * POST:movies
+
 ``` curl --location --request POST 'http://127.0.0.1:5000/movies' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \ --data-raw '{"title" : "ToyStoryyy","release_date" :"2-2-2222","actor_id":4}' ```
+
 ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
 and Put the following body here and then send . Do not forget to Specify the type of the Request ```POST``` . Note , You must enter actor_id with a value that is already exist in the actor table [ Beacuse  is a foreign key ] . 
+
 ```{"title" : "ToyStoryyy","release_date" :"2-2-2222","actor_id":4}```
+
 you will get the following request . New ID of the NEW inserted RAW .
 
 ```{"movies": 4,"success": true}```
 
 * PATCH:actors
+
 ```curl --location --request PATCH 'http://127.0.0.1:5000/actors/3' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \```
+
 ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
 and Put the following body here and then send . Do not forget to Specify the type of the Request ```PATCH```
 ```{"name":"arwa"}```
+
 * Response
+
 ```{"Actor": 3,"success": true}```
 
 * PATCH:movies
