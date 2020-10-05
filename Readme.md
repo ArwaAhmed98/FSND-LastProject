@@ -197,6 +197,7 @@ ALSO, you can use postman by navigating to the body tab and specify ```raw ==> J
 and Put the following body here and then send . Do not forget to Specify the type of the Request ```PATCH```
 
 ```{"title":"PursuitofHappiness","actor_id":3}```
+
 * Response
 
 ```{"Movies": 5,"success": true}```
@@ -206,6 +207,5 @@ and Put the following body here and then send . Do not forget to Specify the typ
 the unit testing of that api is already found in test_app.py 
 
 ```cd into your project directory ```
-
 ```bash setup2.sh```  
 
