@@ -127,8 +127,8 @@ In order to test your API , we have 2 ways Either to use cURL or [Postman](https
 unit testing is already implmented in the ```test_app.py``` with Test driven development concept . in order to test the APP with its Authorization run the following command . 
 ## Samples of Postman and cURL
 
-[Get:actors](
-[link text](http://example.com/))
+[Get:actors](http://example.com/)
+
 
 ``` curl --location --request GET 'http://127.0.0.1:5000/actors' \ --header 'Authorization: Bearer $TOKEN_VALUE```
 
@@ -136,19 +136,24 @@ or using Postman send the following request :
 
 ```http://127.0.0.1:5000/actors``` .
 
-Response
+* Response
 
 ```{'Actors':[{'age': 20,'gender': 'Female','id': 1,'name': 'Nada',},{'age': 22,'gender': 'female','id': 2,'name': 'arwa',},{'age': 10,'gender': 'female','id': 3,'name': 'mai',}],'success': true}```
 
-* Get:actors
-```curl  --request GET 'http://127.0.0.1:5000/movies' \--header 'Authorization: Bearer $TOKEN_VALUE```
-or using Postman send the following request :
-```http://127.0.0.1:5000/movies``` . You will get the response :
+ [Get:actors] (http://example.com/)
 
+```curl  --request GET 'http://127.0.0.1:5000/movies' \--header 'Authorization: Bearer $TOKEN_VALUE```
+
+or using Postman send the following request :
+
+```http://127.0.0.1:5000/movies``` . 
+
+* Response 
 ```{"Movies":[{"actor_id": 1,"id": 3,"release_date": "Sat, 02 Feb 2222 00:00:00 GMT","title": "toystory"},{"actor_id": 2,"id": 4,"release_date": "Tue, 03 Mar 3333 00:00:00 GMT","title": "juglebook"},{"actor_id": 3,"id": 5,"release_date": "Mon, 04 Apr 4444 00:00:00 GMT","title": "google"}],"success": true}```
 
 
-* DELETE:actors
+[DELETE:actors](http://example.com/)
+
 ```curl  --request DELETE 'http://127.0.0.1:5000/actors/1' \ --header 'Authorization: Bearer $TOKEN_VALUE' ```
 
 or send the following request using postman :
@@ -156,11 +161,12 @@ or send the following request using postman :
 ```http://127.0.0.1:5000/actors/1 ```
 
 you will get the response with the id that has been deleted .
+* Response :
 
 ```{"actor_id": 1,"success": true}```
 
 
-* DELETE:movies
+[DELETE:movies](http://example.com/)
 
 ```curl  --request DELETE 'http://127.0.0.1:5000/movies/2' \ --header 'Authorization: Bearer $TOKEN_VALUE' ```
 
@@ -168,21 +174,23 @@ or send the following request using postman :
 ```http://127.0.0.1:5000/movies/2 ```
 you will get the response with the id that has been deleted . 
 
+* Response :
+
 ```{"id": 2,"success": true}```
 
-* POST:actors
+[POST:actors](http://example.com/)
 
 ``` curl --location --request POST 'http://127.0.0.1:5000/actors' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \ --data-raw '{"name" : "arwa","age" : 80,"gender":"female"}' ```
 
 ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
-and Put the following body here and then send .
-```{"name" : "arwa","age" : 80,"gender":"female"}```
+and Put the following body ```{"name" : "arwa","age" : 80,"gender":"female"}``` and then send .
 
 you will get the following request . New ID of the NEW inserted RAW 
+* Reponse :
 
 ```{"id": 4,"success": true}```
 
-* POST:movies
+[POST:movies](http://example.com/)
 
 ``` curl --location --request POST 'http://127.0.0.1:5000/movies' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \ --data-raw '{"title" : "ToyStoryyy","release_date" :"2-2-2222","actor_id":4}' ```
 
@@ -192,10 +200,11 @@ and Put the following body here and then send . Do not forget to Specify the typ
 ```{"title" : "ToyStoryyy","release_date" :"2-2-2222","actor_id":4}```
 
 you will get the following request . New ID of the NEW inserted RAW .
+* Reponse :
 
 ```{"movies": 4,"success": true}```
 
-* PATCH:actors
+[PATCH:actors](http://example.com/)
 
 ```curl --location --request PATCH 'http://127.0.0.1:5000/actors/3' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \```
 
@@ -207,7 +216,7 @@ and Put the following body here and then send . Do not forget to Specify the typ
 
 ```{"Actor": 3,"success": true}```
 
-* PATCH:movies
+[PATCH:movies](http://example.com/)
 
 ```curl --location --request PATCH 'http://127.0.0.1:5000/movies/5' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \```
 
