@@ -137,56 +137,69 @@ Response
 ```{'Actors':[{'age': 20,'gender': 'Female','id': 1,'name': 'Nada',},{'age': 22,'gender': 'female','id': 2,'name': 'arwa',},{'age': 10,'gender': 'female','id': 3,'name': 'mai',}],'success': true}```
 
 * Get:actors
-```curl  --request GET 'http://127.0.0.1:5000/movies' \
---header 'Authorization: Bearer $TOKEN_VALUE```
+```curl  --request GET 'http://127.0.0.1:5000/movies' \--header 'Authorization: Bearer $TOKEN_VALUE```
 or using Postman send the following request :
 ```http://127.0.0.1:5000/movies``` . You will get the response :
 
-```{
-    "Movies": [
-        {
-            "actor_id": 1,
-            "id": 2,
-            "release_date": "Thu, 07 May 1998 00:00:00 GMT",
-            "title": "aihaga"
-        },
-        {
-            "actor_id": 1,
-            "id": 3,
-            "release_date": "Sat, 02 Feb 2222 00:00:00 GMT",
-            "title": "toystory"
-        },
-        {
-            "actor_id": 2,
-            "id": 4,
-            "release_date": "Tue, 03 Mar 3333 00:00:00 GMT",
-            "title": "juglebook"
-        },
-        {
-            "actor_id": 3,
-            "id": 5,
-            "release_date": "Mon, 04 Apr 4444 00:00:00 GMT",
-            "title": "google"
-        }
-    ],
-    "success": true
-} ```
+```{"Movies":[{"actor_id": 1,"id": 3,"release_date": "Sat, 02 Feb 2222 00:00:00 GMT","title": "toystory"},{"actor_id": 2,"id": 4,"release_date": "Tue, 03 Mar 3333 00:00:00 GMT","title": "juglebook"},{"actor_id": 3,"id": 5,"release_date": "Mon, 04 Apr 4444 00:00:00 GMT","title": "google"}],"success": true}```
 
-* DELETE:movies
-``` curl  --request DELETE 'http://127.0.0.1:5000/movies/2' \
---header 'Authorization: Bearer $TOKEN_VALUE' ```
+
+* DELETE:actors
+```curl  --request DELETE 'http://127.0.0.1:5000/actors/1' \ --header 'Authorization: Bearer $TOKEN_VALUE' ```
 
 or send the following request using postman :
-``` http://127.0.0.1:5000/movies/2 ```
+```http://127.0.0.1:5000/actors/1 ```
+you will get the response with the id that has been deleted .
+
+```{"actor_id": 1,"success": true}```
+
+
+* DELETE:movies
+```curl  --request DELETE 'http://127.0.0.1:5000/movies/2' \ --header 'Authorization: Bearer $TOKEN_VALUE' ```
+
+or send the following request using postman :
+```http://127.0.0.1:5000/movies/2 ```
 you will get the response with the id that has been deleted . 
-```
-{
-    "id": 2,
-    "success": true
-}
-```
-```
-```
-cd into your project directory
-bash setup2.sh
-```
+
+```{"id": 2,"success": true}```
+
+* POST:actors
+``` curl --location --request POST 'http://127.0.0.1:5000/actors' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \ --data-raw '{"name" : "arwa","age" : 80,"gender":"female"}' ```
+ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
+and Put the following body here and then send .
+```{"name" : "arwa","age" : 80,"gender":"female"}```
+you will get the following request . New ID of the NEW inserted RAW 
+
+```{"id": 4,"success": true}```
+
+* POST:movies
+``` curl --location --request POST 'http://127.0.0.1:5000/movies' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \ --data-raw '{"title" : "ToyStoryyy","release_date" :"2-2-2222","actor_id":4}' ```
+ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
+and Put the following body here and then send . Do not forget to Specify the type of the Request ```POST``` . Note , You must enter actor_id with a value that is already exist in the actor table [ Beacuse  is a foreign key ] . 
+```{"title" : "ToyStoryyy","release_date" :"2-2-2222","actor_id":4}```
+you will get the following request . New ID of the NEW inserted RAW .
+
+```{"movies": 4,"success": true}```
+
+* PATCH:actors
+```curl --location --request PATCH 'http://127.0.0.1:5000/actors/3' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \```
+ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
+and Put the following body here and then send . Do not forget to Specify the type of the Request ```PATCH```
+```{"name":"arwa"}```
+* Response
+```{"Actor": 3,"success": true}```
+
+* PATCH:movies
+```curl --location --request PATCH 'http://127.0.0.1:5000/movies/5' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \```
+ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
+and Put the following body here and then send . Do not forget to Specify the type of the Request ```PATCH```
+```{"title":"PursuitofHappiness","actor_id":3}```
+* Response
+```{"Movies": 5,"success": true}```
+
+
+# Unit testing of the API 
+the unit testing of that api is already found in test_app.py 
+```cd into your project directory ```
+```bash setup2.sh```  
+
