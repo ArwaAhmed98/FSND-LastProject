@@ -126,8 +126,9 @@ In order to test your API , we have 2 ways Either to use cURL or [Postman](https
 ## Test using unit testing 
 unit testing is already implmented in the ```test_app.py``` with Test driven development concept . in order to test the APP with its Authorization run the following command . 
 ## Samples of Postman and cURL
+
 * Get:actors
-```curl --location --request GET 'http://127.0.0.1:5000/actors' \
+``` curl --location --request GET 'http://127.0.0.1:5000/actors' \
 --header 'Authorization: Bearer $TOKEN_VALUE```
 or using Postman send the following request :
 ```http://127.0.0.1:5000/actors``` .
