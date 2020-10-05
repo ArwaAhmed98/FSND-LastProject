@@ -135,7 +135,7 @@ unit testing is already implmented in the ```test_app.py``` with Test driven dev
 or using Postman send the following request :
 
 ```http://127.0.0.1:5000/actors``` .
-
+you will get a list of all actors found in the database
 * Response
 
 ```{'Actors':[{'age': 20,'gender': 'Female','id': 1,'name': 'Nada',},{'age': 22,'gender': 'female','id': 2,'name': 'arwa',},{'age': 10,'gender': 'female','id': 3,'name': 'mai',}],'success': true}```
@@ -147,8 +147,9 @@ or using Postman send the following request :
 or using Postman send the following request :
 
 ```http://127.0.0.1:5000/movies``` . 
-
+you will get a list of all movies found in the database
 * Response 
+
 ```{"Movies":[{"actor_id": 1,"id": 3,"release_date": "Sat, 02 Feb 2222 00:00:00 GMT","title": "toystory"},{"actor_id": 2,"id": 4,"release_date": "Tue, 03 Mar 3333 00:00:00 GMT","title": "juglebook"},{"actor_id": 3,"id": 5,"release_date": "Mon, 04 Apr 4444 00:00:00 GMT","title": "google"}],"success": true}```
 
 
