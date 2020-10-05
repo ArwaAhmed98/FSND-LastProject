@@ -190,11 +190,15 @@ and Put the following body here and then send . Do not forget to Specify the typ
 ```{"Actor": 3,"success": true}```
 
 * PATCH:movies
+
 ```curl --location --request PATCH 'http://127.0.0.1:5000/movies/5' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \```
+
 ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
 and Put the following body here and then send . Do not forget to Specify the type of the Request ```PATCH```
+
 ```{"title":"PursuitofHappiness","actor_id":3}```
 * Response
+
 ```{"Movies": 5,"success": true}```
 
 
@@ -202,5 +206,6 @@ and Put the following body here and then send . Do not forget to Specify the typ
 the unit testing of that api is already found in test_app.py 
 
 ```cd into your project directory ```
+
 ```bash setup2.sh```  
 
