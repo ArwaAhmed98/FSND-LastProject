@@ -91,6 +91,7 @@ Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` d
 
 ### Get the server running  the http://localhost:5000/ or running live here https://castingagencyy.herokuapp.com/
 
+
 ## Setting up Authorization
 
 ### Setup Auth0
@@ -121,8 +122,7 @@ Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` d
       - Sign into each account and make note of the JWT .
     
 ## Testing the API with cURL or Postman
-In order to test your API , we have 2 ways Either to use cURL or [Postman](https://getpostman.com) collection  . You have to save $TOKEN_VALUE and replace it with its value in the URL of the curl or postman . you have to choose the way that is more convenient to you . If you chose to use Postman . So , you must send the token in the Authorization tab .
-
+In order to test your API , we have 2 ways Either to use cURL or [Postman](https://getpostman.com) collection  . You have to save $TOKEN_VALUE and replace it with its value in the URL of the curl or postman . you have to choose the way that is more convenient to you . If you chose to use Postman . So , you must send the token in the Authorization tab . 
 ## Samples of Postman and cURL
 
 [Get:actors](http://example.com/)
