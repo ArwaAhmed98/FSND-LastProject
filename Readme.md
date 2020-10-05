@@ -120,3 +120,11 @@ Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` d
       - Register 3 users - assign the Assistant role to one and Director role to the other and last one to Producer.
       - Sign into each account and make note of the JWT .
     
+## Testing the API with cURL or Postman
+In order to test your API , we have 2 ways Either to use cURL or [Postman](https://getpostman.com) collection  . You have to save $TOKEN_VALUE and replace it with its value in the URL of the curl or postman .
+
+## Testing with unit testing
+```
+cd into your project directory
+bash setup2.sh
+```
