@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 import os
 import sys
 from flask import Flask, request, abort, jsonify
@@ -23,11 +24,11 @@ def create_app(test_config=None):
         response.headers.add('Acess-Control-Allow-Methods',
                              'GET,POST,PATCH,DELETE,OPTIONS')
         return response
-    
+
     @app.route('/')
     def index():
-        return ("Congrats")
-    
+        return 'Congrats'
+
     @app.route('/actors')
     @requires_auth('get:actors')
     def get_all_actors(payload):
@@ -151,7 +152,6 @@ def create_app(test_config=None):
         if body.get('release_date') is not None:
             to_be_updated_row_n.release_date = body.get('release_date')
 
-
         try:
             to_be_updated_row_n.update()
         except:
@@ -201,4 +201,3 @@ app = create_app()
 
 if __name__ == '__main__':
     app.run(debug=True)
-

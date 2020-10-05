@@ -33,7 +33,7 @@ This will install all of the required packages we selected within the `requireme
 - [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
 
 ## Database Setup
-With Postgres running, restore a database using the trivia.psql file provided. From the backend folder in terminal run:
+With Postgres running, restore a database using the castingagency.psql file provided. From the backend folder in terminal run:
 ```bash
 (linux/macOS/window bash ) createdb castingagency
 (windows10 -- PSQL terminal) CREATE DATABASE castingagency
