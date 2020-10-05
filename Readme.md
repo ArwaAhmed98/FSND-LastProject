@@ -123,8 +123,6 @@ Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` d
 ## Testing the API with cURL or Postman
 In order to test your API , we have 2 ways Either to use cURL or [Postman](https://getpostman.com) collection  . You have to save $TOKEN_VALUE and replace it with its value in the URL of the curl or postman . you have to choose the way that is more convenient to you . If you chose to use Postman . So , you must send the token in the Authorization tab .
 
-## Test using unit testing 
-unit testing is already implmented in the ```test_app.py``` with Test driven development concept . in order to test the APP with its Authorization run the following command . 
 ## Samples of Postman and cURL
 
 [Get:actors](http://example.com/)
@@ -231,9 +229,9 @@ and Put the following body here and then send . Do not forget to Specify the typ
 ```{"Movies": 5,"success": true}```
 
 
-# Unit testing of the API 
-the unit testing of that api is already found in test_app.py 
+## Test using unit testing 
 
-```cd into your project directory ```
+unit testing is already implmented in the ```test_app.py``` with Test driven development concept . 
+
+ ```cd into your project directory ```
 ```bash setup2.sh```  
-
