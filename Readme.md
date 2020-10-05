@@ -128,36 +128,14 @@ unit testing is already implmented in the ```test_app.py``` with Test driven dev
 ## Samples of Postman and cURL
 
 * Get:actors
-``` curl --location --request GET 'http://127.0.0.1:5000/actors' \
---header 'Authorization: Bearer $TOKEN_VALUE```
+``` curl --location --request GET 'http://127.0.0.1:5000/actors' \ --header 'Authorization: Bearer $TOKEN_VALUE```
 or using Postman send the following request :
 ```http://127.0.0.1:5000/actors``` .
 
 Response
 
-```{
-    "Actors": [
-        {
-            "age": 20,
-            "gender": "Female",
-            "id": 1,
-            "name": "Nada"
-        },
-        {
-            "age": 22,
-            "gender": "female",
-            "id": 2,
-            "name": "arwa"
-        },
-        {
-            "age": 10,
-            "gender": "female",
-            "id": 3,
-            "name": "mai"
-        }
-    ],
-    "success": true
-} ```
+```{'Actors':[{'age': 20,'gender': 'Female','id': 1,'name': 'Nada',},{'age': 22,'gender': 'female','id': 2,'name': 'arwa',},{'age': 10,'gender': 'female','id': 3,'name': 'mai',}],'success': true}```
+
 * Get:actors
 ```curl  --request GET 'http://127.0.0.1:5000/movies' \
 --header 'Authorization: Bearer $TOKEN_VALUE```
