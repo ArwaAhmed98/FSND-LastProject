@@ -191,12 +191,12 @@ you will get the following request . New ID of the NEW inserted RAW
 
 [POST:movies](http://example.com/)
 
-``` curl --location --request POST 'http://127.0.0.1:5000/movies' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \ --data-raw '{"title" : "ToyStoryyy","release_date" :"2-2-2222","actor_id":4}' ```
+``` curl --location --request POST 'http://127.0.0.1:5000/movies' \ --header 'Authorization: Bearer $TOKEN_VALUE' \ --header 'Content-Type: application/json' \ --data-raw '{"title":"aihaga","release_date":"3-3-3333","actor_id":4}' ```
 
 ALSO, you can use postman by navigating to the body tab and specify ```raw ==> JSON```
 and Put the following body here and then send . Do not forget to Specify the type of the Request ```POST``` . Note , You must enter actor_id with a value that is already exist in the actor table [ Beacuse  is a foreign key ] . 
 
-```{"title" : "ToyStoryyy","release_date" :"2-2-2222","actor_id":4}```
+```{"title":"aihaga","release_date":"3-3-3333","actor_id":4}```
 
 you will get the following request . New ID of the NEW inserted RAW .
 * Reponse :
